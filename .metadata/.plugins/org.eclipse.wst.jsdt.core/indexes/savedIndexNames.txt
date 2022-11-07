@@ -1,8 +1,4 @@
 INDEX VERSION 1.4+C:\Users\TwitterStore\Desktop\java_stack\relationships\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3954810255.index
-2926205020.index
-2422473985.index
-2790658752.index
+1980525569.index
+1226771403.index
 3228899660.index
-1490616659.index
-2507208911.index

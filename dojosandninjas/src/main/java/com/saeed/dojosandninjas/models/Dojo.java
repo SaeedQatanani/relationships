@@ -14,6 +14,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="dojos")
@@ -22,6 +23,7 @@ public class Dojo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
+	@Size(min=3, max=100, message="Too short")
 	private String name;
     @Column(updatable=false)
     private Date createdAt;

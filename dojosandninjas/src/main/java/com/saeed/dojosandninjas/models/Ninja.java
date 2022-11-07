@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="ninjas")
@@ -20,7 +21,9 @@ public class Ninja {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Size(min=3, max=100, message="Too short")
     private String firstName;
+    @Size(min=3, max=100, message="Too short")
     private String lastName;
     private int age;
     @Column(updatable=false)
