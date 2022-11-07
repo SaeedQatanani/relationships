@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+C:\Users\TwitterStore\Desktop\java_stack\relationships\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2507208911.index
+\dojosandninjas\src\main\java

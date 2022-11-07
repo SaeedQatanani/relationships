@@ -1,0 +1,16 @@
+INDEX VERSION 1.131+C:\Users\TwitterStore\Desktop\java_stack\relationships\.metadata\.plugins\org.eclipse.jdt.core
+272192018.index
+535178907.index
+42602525.index
+1665249742.index
+1394121537.index
+283587929.index
+3908501068.index
+4230598524.index
+2089162447.index
+1902948278.index
+2240511054.index
+3576945142.index
+4234190651.index
+1337096479.index
+1865797976.index

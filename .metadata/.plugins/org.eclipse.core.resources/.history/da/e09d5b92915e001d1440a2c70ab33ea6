@@ -1,0 +1,52 @@
+package com.saeed.dojosandninjas.controllers;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.saeed.dojosandninjas.models.Dojo;
+import com.saeed.dojosandninjas.models.Ninja;
+import com.saeed.dojosandninjas.services.DojoService;
+import com.saeed.dojosandninjas.services.NinjaService;
+
+@Controller
+public class MainController {
+	@Autowired
+	DojoService dojoService;
+	@Autowired
+	NinjaService ninjaService;
+	
+	@GetMapping("/dojos/new")
+	public String dojo(@ModelAttribute("dojo") Dojo dojo) {
+		return "dojo.jsp";
+	}
+	@GetMapping("/ninjas/new")
+	public String ninja(@ModelAttribute("ninja") Ninja ninja) {
+		return "ninja.jsp";
+	}
+	@PostMapping("/dojos")
+	public String createDojo(@Valid @ModelAttribute("dojo") Dojo dojo, BindingResult result) {
+		if (result.hasErrors()) {
+			return "dojo.jsp";
+		}
+		else {
+			dojoService.createDojo(dojo);
+			return "show.jsp";
+		}
+	}
+	@PostMapping("/ninjas")
+	public String createNinja(@Valid @ModelAttribute("ninja") Ninja ninja, BindingResult result) {
+		if (result.hasErrors()) {
+			return "ninja.jsp";
+		}
+		else {
+			ninjaService.createNinja(ninja);
+			return "show.jsp";
+		}
+	}
+}

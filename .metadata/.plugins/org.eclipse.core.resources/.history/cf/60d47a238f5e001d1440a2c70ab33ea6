@@ -1,0 +1,15 @@
+package com.saeed.dojosandninjas.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+import com.saeed.dojosandninjas.models.Dojo;
+
+@Controller
+public class MainController {
+	@GetMapping("/dojos/new")
+	public String dojo(@ModelAttribute("dojo") Dojo dojo) {
+		return "dojo.jsp";
+	}
+}
