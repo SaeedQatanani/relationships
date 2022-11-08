@@ -7,12 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.saeed.productsandcategories.models.Category;
+import com.saeed.productsandcategories.models.Product;
 import com.saeed.productsandcategories.repositories.CategoryRepository;
 
 @Service
 public class CategoryService {
 	@Autowired
 	CategoryRepository categoryRepository;
+	
 	public List<Category> allCategories() {
 		return categoryRepository.findAll();
 	}
@@ -27,5 +29,11 @@ public class CategoryService {
 		else {
 			return null;
 		}
+	}
+	public Category updateCategory(Category c) {
+		return categoryRepository.save(c);
+	}
+	public List<Category> categoriesNotInProduct(Product product){
+		return categoryRepository.findByProductsNotContains(product);
 	}
 }

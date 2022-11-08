@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.saeed.productsandcategories.models.Category;
 import com.saeed.productsandcategories.models.Product;
 import com.saeed.productsandcategories.repositories.ProductRepository;
 
@@ -27,5 +28,11 @@ public class ProductService {
 		else {
 			return null;
 		}
+	}
+	public Product updateProduct(Product p) {
+		return productRepository.save(p);
+	}
+	public List<Product> productssNotIncategory(Category category){
+		return productRepository.findByCategoriesNotContains(category);
 	}
 }
